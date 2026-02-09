@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 const App = () => {
   // YOUR NEW PIXEL ID
   const PIXEL_ID = '1556362512084241';
-  const TELEGRAM_LINK = 'https://telegram.me/+uEWhmljkjB1jYWI1'; // Replace this
+  const TELEGRAM_LINK = 'https://t.me/+4_-7zkyD88Y5MjFl'; // Replace this
 
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const App = () => {
     // Small delay ensures Meta receives the data before the redirect
     setTimeout(() => {
       window.location.href = TELEGRAM_LINK;
-    }, 250);
+    }, 500);
   };
 
   return (
@@ -90,8 +90,8 @@ const App = () => {
           </button>
         </div>
 
-        {/* Winning Proof Image */}
-        {/* <div className="mt-12 group relative">
+        {/* Winning Proof Image
+        <div className="mt-12 group relative">
           <img src="/One.jpeg" alt="Winning Proof" className="relative rounded-2xl border border-white/10 w-full shadow-2xl" />
         </div> */}
       </main>
