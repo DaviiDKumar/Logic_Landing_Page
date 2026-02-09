@@ -55,7 +55,7 @@ const App = () => {
           <img src="/logo.jpeg" alt="Logo" className="relative w-full h-full object-cover rounded-full border-4 border-cyan-400/30 p-1 bg-[#0a0a0a]" />
         </div>
 
-        {/* <div className="text-center space-y-4 mb-10">
+        <div className="text-center space-y-4 mb-10">
           <h1 className="text-3xl md:text-4xl font-black italic tracking-tighter uppercase">
             Hack Number Prediction
           </h1>
@@ -65,14 +65,14 @@ const App = () => {
           <p className="text-gray-400 text-lg">
             बड़ा से बड़ा लॉस <span className="text-white font-bold  decoration-cyan-500">100% यहाँ Recover</span> होगा
           </p>
-        </div> */}
+        </div>
 
-        <div className="text-center space-y-4 mb-10">
+        {/* <div className="text-center space-y-4 mb-10">
           <p>"Advanced Pattern Analysis & Strategic Insights"
 
             Welcome to the premier community for digital pattern recognition and strategic sequence analysis. Our platform is designed for enthusiasts who want to master the art of predictive logic through data-driven insights. We provide a comprehensive environment to study historical trends, identify high-probability sequences, and refine your analytical skills in a community-driven setting. Whether you are looking to understand sequence distributions or participate in our real-time strategy signals, our community offers the tools you need to transition from guessing to informed decision-making. Join over 5,000+ members today to access our exclusive analytical channel and start your journey toward mastering complex patterns.
           </p>
-        </div>
+        </div> */}
 
         {/* The Animated < JOIN > Button */}
         <div className="relative group">
@@ -90,10 +90,10 @@ const App = () => {
           </button>
         </div>
 
-        {/* Winning Proof Image
+        {/* Winning Proof Image */}
         <div className="mt-12 group relative">
           <img src="/One.jpeg" alt="Winning Proof" className="relative rounded-2xl border border-white/10 w-full shadow-2xl" />
-        </div> */}
+        </div>
       </main>
 
 
