@@ -55,7 +55,7 @@ const App = () => {
           <img src="/logo.jpeg" alt="Logo" className="relative w-full h-full object-cover rounded-full border-4 border-cyan-400/30 p-1 bg-[#0a0a0a]" />
         </div>
 
-        <div className="text-center space-y-4 mb-10">
+        {/* <div className="text-center space-y-4 mb-10">
           <h1 className="text-3xl md:text-4xl font-black italic tracking-tighter uppercase">
             Hack Number Prediction
           </h1>
@@ -64,6 +64,13 @@ const App = () => {
           </p>
           <p className="text-gray-400 text-lg">
             बड़ा से बड़ा लॉस <span className="text-white font-bold  decoration-cyan-500">100% यहाँ Recover</span> होगा
+          </p>
+        </div> */}
+
+        <div className="text-center space-y-4 mb-10">
+          <p>"Advanced Pattern Analysis & Strategic Insights"
+
+            Welcome to the premier community for digital pattern recognition and strategic sequence analysis. Our platform is designed for enthusiasts who want to master the art of predictive logic through data-driven insights. We provide a comprehensive environment to study historical trends, identify high-probability sequences, and refine your analytical skills in a community-driven setting. Whether you are looking to understand sequence distributions or participate in our real-time strategy signals, our community offers the tools you need to transition from guessing to informed decision-making. Join over 5,000+ members today to access our exclusive analytical channel and start your journey toward mastering complex patterns.
           </p>
         </div>
 
@@ -75,23 +82,23 @@ const App = () => {
             className="relative w-full py-6 bg-blue-800 text-white rounded-2xl transition-all active:scale-95 shadow-2xl flex flex-col items-center justify-center"
           >
             <div className="flex items-center gap-3 text-2xl font-black tracking-tighter">
-           
+
               <span>JOIN TELEGRAM NOW</span>
-         
+
             </div>
             <div className="text-[10px] uppercase tracking-[.3em] font-bold opacity-70 mt-1">Click Here TO Join</div>
           </button>
         </div>
 
         {/* Winning Proof Image */}
-        <div className="mt-12 group relative">
+        {/* <div className="mt-12 group relative">
           <img src="/One.jpeg" alt="Winning Proof" className="relative rounded-2xl border border-white/10 w-full shadow-2xl" />
-        </div>
+        </div> */}
       </main>
 
-    
 
-      
+
+
 
     </div>
   );
