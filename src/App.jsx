@@ -1,106 +1,21 @@
-import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Main1 from './pages/Main1';
+import Main2 from './pages/Main2';
+import Main3 from './pages/Main3';
 
 const App = () => {
-  // YOUR NEW PIXEL ID
-  const PIXEL_ID = '1556362512084241';
-  const TELEGRAM_LINK = 'https://t.me/+4_-7zkyD88Y5MjFl'; // Replace this
-
-
-  useEffect(() => {
-    // Dynamic import of the pixel library
-    import('react-facebook-pixel')
-      .then((x) => x.default)
-      .then((ReactPixel) => {
-        ReactPixel.init(PIXEL_ID);
-        ReactPixel.pageView();
-      });
-  }, []);
-
-  const handleLeadAction = () => {
-    // Standard Lead Tracking
-    if (window.fbq) {
-      window.fbq('track', 'Lead', {
-        content_name: 'Hack Prediction Join',
-        content_category: 'Telegram'
-      });
-    }
-
-    // Small delay ensures Meta receives the data before the redirect
-    setTimeout(() => {
-      window.location.href = TELEGRAM_LINK;
-    }, 500);
-  };
-
   return (
-    <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-cyan-500 overflow-x-hidden">
-
-      {/* Background Glows */}
-      <div className="fixed top-[-10%] left-[-10%] w-[50%] h-[50%] bg-cyan-600/20 blur-[120px] rounded-full -z-10"></div>
-
-      <main className="max-w-xl mx-auto px-5 pt-12 pb-32">
-
-        {/* Live Status Badge */}
-        <div className="flex justify-center mb-8">
-          <div className="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full backdrop-blur-md">
-            <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-            </span>
-            <span className="text-xs font-bold tracking-[0.2em] text-gray-300">LIVE SIGNALS ACTIVE</span>
-          </div>
-        </div>
-
-        {/* Profile Image */}
-        <div className="relative mx-auto w-32 h-32 mb-8">
-          <img src="/logo.jpeg" alt="Logo" className="relative w-full h-full object-cover rounded-full border-4 border-cyan-400/30 p-1 bg-[#0a0a0a]" />
-        </div>
-
-        <div className="text-center space-y-4 mb-10">
-          <h1 className="text-3xl md:text-4xl font-black italic tracking-tighter uppercase">
-            Hack Number Prediction
-          </h1>
-          <p className="text-cyan-400 font-mono font-bold text-lg italic">
-            SURE SHOT PREDICTION FREE GIFT CODE
-          </p>
-          <p className="text-gray-400 text-lg">
-            बड़ा से बड़ा लॉस <span className="text-white font-bold  decoration-cyan-500">100% यहाँ Recover</span> होगा
-          </p>
-        </div>
-
-        {/* <div className="text-center space-y-4 mb-10">
-          <p>"Advanced Pattern Analysis & Strategic Insights"
-
-            Welcome to the premier community for digital pattern recognition and strategic sequence analysis. Our platform is designed for enthusiasts who want to master the art of predictive logic through data-driven insights. We provide a comprehensive environment to study historical trends, identify high-probability sequences, and refine your analytical skills in a community-driven setting. Whether you are looking to understand sequence distributions or participate in our real-time strategy signals, our community offers the tools you need to transition from guessing to informed decision-making. Join over 5,000+ members today to access our exclusive analytical channel and start your journey toward mastering complex patterns.
-          </p>
-        </div> */}
-
-        {/* The Animated < JOIN > Button */}
-        <div className="relative group">
-          <div className="absolute -inset-1 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-2xl blur opacity-40 group-hover:opacity-100 transition duration-300"></div>
-          <button
-            onClick={handleLeadAction}
-            className="relative w-full py-6 bg-blue-800 text-white rounded-2xl transition-all active:scale-95 shadow-2xl flex flex-col items-center justify-center"
-          >
-            <div className="flex items-center gap-3 text-2xl font-black tracking-tighter">
-
-              <span>JOIN TELEGRAM NOW</span>
-
-            </div>
-            <div className="text-[10px] uppercase tracking-[.3em] font-bold opacity-70 mt-1">Click Here TO Join</div>
-          </button>
-        </div>
-
-        {/* Winning Proof Image */}
-        <div className="mt-12 group relative">
-          <img src="/One.jpeg" alt="Winning Proof" className="relative rounded-2xl border border-white/10 w-full shadow-2xl" />
-        </div>
-      </main>
-
-
-
-
-
-    </div>
+    <Router>
+      <Routes>
+        {/* Redirect base URL to main page */}
+        <Route path="/" element={<Navigate to="/logic-page/analyzer/m1" />} />
+        
+        {/* Your 3 Landing Pages */}
+        <Route path="/logic-page/analyzer/m1" element={<Main1 />} />
+        <Route path="/logic-page/secure/access-point" element={<Main2 />} />
+        <Route path="/logic-page/terminal/live-signals" element={<Main3 />} />
+      </Routes>
+    </Router>
   );
 };
 
