@@ -1,20 +1,35 @@
 import React, { useEffect } from 'react';
-import { ShieldCheck, Zap, ChevronRight, Crosshair } from 'lucide-react';
+import { ShieldCheck, ChevronRight, Crosshair } from 'lucide-react';
 
 const Main11 = () => {
   const PIXEL_ID = '1556362512084241';
   const TELEGRAM_LINK = 'https://t.me/+B6zODkIocggwMTE1';
 
+  // 1. Initialize Pixel and track PageView
   useEffect(() => {
-    import('react-facebook-pixel').then((x) => x.default).then((ReactPixel) => {
-      ReactPixel.init(PIXEL_ID);
-      ReactPixel.pageView();
-    });
+    import('react-facebook-pixel')
+      .then((x) => x.default)
+      .then((ReactPixel) => {
+        ReactPixel.init(PIXEL_ID);
+        ReactPixel.pageView();
+      });
   }, []);
 
+  // 2. High-Reliability Lead Tracking on Click
   const handleLeadAction = () => {
-    if (window.fbq) window.fbq('track', 'Lead', { content_name: 'Main Page 1 - CyberVoid' });
-    setTimeout(() => { window.location.href = TELEGRAM_LINK; }, 500);
+    import('react-facebook-pixel')
+      .then((x) => x.default)
+      .then((ReactPixel) => {
+        ReactPixel.track('Lead', { 
+          content_name: 'Main Page 1 - CyberVoid',
+          content_category: 'Telegram'
+        });
+      });
+
+    // 500ms delay to allow Pixel to fire before navigation
+    setTimeout(() => { 
+      window.location.href = TELEGRAM_LINK; 
+    }, 500);
   };
 
   return (
@@ -64,7 +79,7 @@ const Main11 = () => {
           </p>
         </div>
 
-        {/* --- DYNAMIC CTA BUTTON --- */}
+        {/* --- DYNAMIC ACTION BUTTON --- */}
         <div className="relative group p-1 bg-cyan-500/10 border border-cyan-500/20 rounded-2xl">
           <button 
             onClick={handleLeadAction} 
@@ -72,7 +87,7 @@ const Main11 = () => {
                        md:hover:bg-cyan-950/30 md:hover:border-cyan-400
                        active:scale-[0.96] active:bg-cyan-900/50 active:shadow-[0_0_20px_#22d3ee50]"
           >
-            {/* Shimmer Effect: Stronger on Hover/Active */}
+            {/* Shimmer Effect */}
             <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] active:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent" />
             
             <div className="relative z-10 flex flex-col items-center gap-2">
@@ -90,10 +105,10 @@ const Main11 = () => {
           <div className="absolute -top-4 left-0 text-[9px] text-cyan-500/50 font-bold uppercase tracking-widest">
             | Status: Verified
           </div>
-          <div className="relative rounded-2xl overflow-hidden border border-white/10 group">
+          <div className="relative rounded-2xl overflow-hidden border border-white/10 group shadow-2xl">
              <div className="absolute top-0 left-0 w-full h-2 bg-cyan-400/40 shadow-[0_0_20px_#22d3ee] animate-scan z-20" />
              <div className="absolute inset-0 bg-cyan-950/20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-             <img src="/One.jpeg" className="w-full opacity-70 group-hover:opacity-100 transition-all duration-1000" alt="Proof" />
+             <img src="/One.jpeg" className="w-full opacity-70 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-105" alt="Proof" />
           </div>
         </div>
       </main>
