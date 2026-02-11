@@ -3,7 +3,7 @@ import { Activity, Radio, Cpu, ChevronRight } from 'lucide-react';
 
 const Main22 = () => {
   const PIXEL_ID = '1556362512084241';
-  const TELEGRAM_LINK = 'https://t.me/+4_-7zkyD88Y5MjFl';
+  const TELEGRAM_LINK = 'https://t.me/+B6zODkIocggwMTE1';
 
   useEffect(() => {
     import('react-facebook-pixel').then((x) => x.default).then((ReactPixel) => {
