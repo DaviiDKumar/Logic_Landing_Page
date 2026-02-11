@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ShieldCheck, Zap, Terminal, ChevronRight, Lock, LayoutGrid } from 'lucide-react';
+import { ShieldCheck, Zap, Terminal, ChevronRight, Gamepad2, Trophy } from 'lucide-react';
 
 const Main11 = () => {
   const PIXEL_ID = '1556362512084241';
@@ -15,7 +15,7 @@ const Main11 = () => {
   const handleLeadAction = () => {
     if (window.fbq) {
       window.fbq('track', 'Lead', { 
-        content_name: 'Direct Landing Page', 
+        content_name: 'Gaming Strategy Page', 
         content_category: 'Telegram' 
       });
     }
@@ -23,80 +23,74 @@ const Main11 = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#030303] text-white font-sans selection:bg-cyan-500/30 overflow-x-hidden">
+    <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-indigo-500/30 overflow-x-hidden">
       
-      {/* Subtle Background HUD */}
-      <div className="fixed inset-0 bg-[radial-gradient(circle_at_50%_0%,#0ea5e90a,transparent_50%)] pointer-events-none" />
-      <div className="fixed inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] -z-10" />
-
+      {/* HUD Background Effect */}
+      <div className="fixed inset-0 bg-[radial-gradient(circle_at_50%_0%,#6366f115,transparent_50%)] pointer-events-none" />
+      
       <main className="max-w-xl mx-auto px-6 py-12 relative">
         
-        {/* Verification Badge */}
+        {/* Gaming Status Badge */}
         <div className="flex justify-center mb-12">
-          <div className="flex items-center gap-2 px-4 py-1.5 bg-emerald-500/5 border border-emerald-500/20 rounded-full text-emerald-400 text-[10px] font-black tracking-widest uppercase">
-            <ShieldCheck size={12} className="animate-pulse" /> Verified Signal Source
+          <div className="flex items-center gap-2 px-4 py-1.5 bg-indigo-500/10 border border-indigo-500/20 rounded-full text-indigo-400 text-[10px] font-black tracking-widest uppercase">
+            <Gamepad2 size={12} className="animate-bounce" /> Skill-Based Strategy Active
           </div>
         </div>
 
-        {/* --- MAIN PARAGRAPH 1 --- */}
+        {/* --- STRATEGY PARAGRAPH --- */}
         <section className="space-y-6 mb-12">
-          <div className="flex items-center gap-3 text-cyan-500 mb-2">
+          <div className="flex items-center gap-3 text-indigo-400 mb-2">
             <Terminal size={20} />
-            <h2 className="text-xs font-black tracking-[0.3em] uppercase">Sequence Analysis</h2>
+            <h2 className="text-xs font-black tracking-[0.3em] uppercase text-gray-400">Pattern Recognition</h2>
           </div>
           <p className="text-gray-300 text-lg leading-relaxed">
-            Digital pattern recognition involves studying historical data to identify recurring sequences in color-based distributions. 🧪 By analyzing frequency and variance, enthusiasts can develop a structured approach to understanding how certain outcomes follow specific mathematical trends. 📈 This method shifts the focus from simple guessing to **data-driven logic**. 🧠
+            Mastering digital sequence games involves studying historical data to identify recurring patterns in color-based distributions. 🎮 By analyzing the frequency and variance of shifts, players can develop a structured approach to understanding how certain rounds follow specific mathematical trends. 📈 This method shifts the focus from simple guessing to **logical forecasting**. 🧠
           </p>
           <p className="text-gray-300 text-lg leading-relaxed">
-            Mastering these patterns requires patience and a keen eye for detail, as small shifts in the sequence can indicate a change in the overall trend. 📉 Developing a **strategic mindset** is essential for anyone looking to understand the mechanics behind digital probability and sequence forecasting. 💎
+            Success in these skill-based challenges requires patience and a keen eye for detail. Small shifts in the sequence often indicate a change in the overall gameplay trend. 📉 Developing a **strategic mindset** is essential for anyone looking to understand the mechanics behind probability and sequence analysis in modern digital environments. 💎
           </p>
         </section>
 
-        {/* --- DYNAMIC ACTION BUTTON --- */}
-        <div className="relative group mb-16">
-          <div className="absolute -inset-1 bg-cyan-500 blur opacity-10 group-hover:opacity-30 transition duration-500" />
+        {/* --- INTERACTIVE ACTION BUTTON --- */}
+        <div className="relative group mb-12">
+          <div className="absolute -inset-1 bg-indigo-500 blur opacity-20 md:group-hover:opacity-40 transition duration-500" />
           <button 
             onClick={handleLeadAction} 
-            className="relative w-full overflow-hidden py-8 bg-[#0a0a0a] border border-cyan-400/50 rounded-2xl group transition-all 
-                       active:scale-[0.96] active:bg-cyan-900/40"
+            className="relative w-full overflow-hidden py-8 bg-indigo-600 text-white rounded-2xl transition-all duration-300
+                       md:hover:bg-indigo-500 md:hover:scale-[1.01]
+                       active:scale-[0.96] active:bg-indigo-700 shadow-[0_0_30px_rgba(99,102,241,0.3)]"
           >
-            <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-cyan-400/10 to-transparent" />
+            <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
             
-            <div className="relative z-10 flex flex-col items-center gap-2">
-              <div className="flex items-center gap-3 text-2xl font-[1000] italic tracking-tighter text-cyan-400 uppercase">
-                Join Telegram Now <Zap size={28} fill="#22d3ee" className="animate-bounce" />
+            <div className="relative z-10 flex flex-col items-center gap-1">
+              <div className="flex items-center gap-3 text-2xl font-[1000] italic tracking-tighter uppercase">
+                Join Community <Zap size={28} fill="white" />
               </div>
-              <span className="text-[10px] font-bold text-gray-500 uppercase tracking-[0.3em]">Access Live Predictions</span>
+              <span className="text-[10px] font-bold opacity-70 uppercase tracking-[0.3em]">Unlock Live Strategy Guide</span>
             </div>
           </button>
         </div>
 
-        {/* --- MAIN PARAGRAPH 2 --- */}
+        {/* --- GAMEPLAY SECURITY PARAGRAPH --- */}
         <section className="space-y-6">
-          <div className="flex items-center gap-3 text-amber-500 mb-2">
-            <Lock size={20} />
-            <h2 className="text-xs font-black tracking-[0.3em] uppercase">Secure Protocol</h2>
+          <div className="flex items-center gap-3 text-indigo-400 mb-2">
+            <Trophy size={20} />
+            <h2 className="text-xs font-black tracking-[0.3em] uppercase text-gray-400">Player Guidelines</h2>
           </div>
           <p className="text-gray-300 text-lg leading-relaxed">
-            To engage with the platform safely, always prioritize using verified and encrypted channels. 🛡️ Start by creating a secure account and linking a protected digital wallet or **UPI interface** for seamless transactions. 💸 Ensure you are operating within a high-speed network to maintain real-time synchronization with **live signals**. 📡
+            To engage with the community safely, always prioritize using verified and secure channels. 🛡️ Start by setting up your profile and ensuring your connection is synchronized for real-time updates. 📡 Staying updated with the latest **live game signals** allows you to navigate the sequence shifts with better precision and control. 🚀
           </p>
           <p className="text-gray-300 text-lg leading-relaxed">
-            When participating, it is vital to follow a strict **budget management plan** to ensure a sustainable experience. 💰 Using two-factor authentication adds an extra layer of security to your profile. 🔒 By staying informed through the official community updates, you can navigate the environment with confidence and maintain full control over your digital interactions. 🚀
+            When participating in these logic-based challenges, it is vital to follow a disciplined gameplay plan to ensure a consistent experience. 🎮 Using secure authentication adds an extra layer of protection to your session. 🔒 By following official community strategies, you can master the environment with confidence and maintain a steady approach to digital sequence mastering. ✨
           </p>
         </section>
 
-        {/* Footer Identity */}
-        <div className="mt-20 pt-8 border-t border-white/5 flex flex-col items-center gap-4 opacity-40">
-           <LayoutGrid size={24} />
-           <span className="text-[10px] font-bold tracking-[0.5em] uppercase">Encrypted Signal Terminal</span>
+        {/* Footer */}
+        <div className="mt-20 py-8 flex flex-col items-center gap-2 opacity-20 border-t border-white/5">
+           <span className="text-[9px] font-black tracking-[0.6em] uppercase">Strategy Terminal v1.1</span>
         </div>
 
       </main>
-
-      <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes scan { 0% {top: 0} 100% {top: 100%} }
-        .animate-scan { animation: scan 3.5s linear infinite; }
-      `}} />
     </div>
   );
 };
