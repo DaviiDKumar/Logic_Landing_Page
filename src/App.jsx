@@ -5,6 +5,7 @@ import Main3 from './pages/Main3';
 import Main11 from './pages/Main11';
 import Main22 from './pages/Main22';
 import Leads from './pages/Leads';
+import Leads2 from './pages/Leads2';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/logic-page/secure/access-point-2" element={<Main22 />} />
         <Route path="/logic-page/terminal/live-signals" element={<Main3 />} />
         <Route path="/logic-page/terminal/secure/isValid/Leads" element={<Leads />} />
+        <Route path="/logic-page/terminal/secure/isValid/Leads-2" element={<Leads2 />} />
       </Routes>
     </Router>
   );
