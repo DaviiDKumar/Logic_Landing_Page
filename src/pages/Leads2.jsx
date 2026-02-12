@@ -3,7 +3,7 @@ import { ShieldCheck, Zap, ChevronRight, Crosshair } from 'lucide-react';
 
 const Leads2 = () => {
   const PIXEL_ID = '2037806726999750';
-  const TELEGRAM_LINK = 'https://t.me/+4_-7zkyD88Y5MjFl';
+  const TELEGRAM_LINK = 'https://t.me/+6Hfqxw8XRwgwODM9';
 
   useEffect(() => {
     import('react-facebook-pixel').then((x) => x.default).then((ReactPixel) => {
