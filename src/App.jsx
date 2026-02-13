@@ -2,6 +2,7 @@ import React from 'react';
 
 function App() {
   const telegramLink = "https://t.me/+9SbYLiIlhlEwYzc1";
+  const telegramLink2 = "https://t.me/Apexad_works";
 
   const handleJoinClick = (e) => {
     e.preventDefault();
@@ -13,41 +14,38 @@ function App() {
     }, 300);
   };
 
+  const handleJoinClick2 = (e) => {
+    e.preventDefault();
+    setTimeout(() => {
+      window.open(telegramLink2, '_blank');
+    }, 300);
+  };
+
   return (
     <div style={styles.wrapper}>
       <div style={styles.container}>
         <header style={styles.header}>
-          <img src="idle1.jpg" alt="Game Logo Top" style={styles.image} />
-          
-          <h1 style={styles.title}>
-            🎮 Color Prediction Game – Basic Info
-          </h1>
-          
+          {/* Logo in a Circular Ring */}
+          <div style={styles.logoRing}>
+            <img src="logo.jpeg" alt="Logo" style={styles.circularImage} />
+          </div>
+
           <div style={styles.contentBox}>
-            <p style={styles.description}>
-              Predict the correct color before the timer ends and win rewards. 
-              Fast rounds, simple rules, instant results.
-            </p>
-            
-            <div style={styles.rulesList}>
-              <h3 style={styles.rulesTitle}>📌 Basic Rules</h3>
-              <ul style={styles.ul}>
-                <li>🕒 Each round has a fixed timer</li>
-                <li>🎨 Choose one color before time runs out</li>
-                <li>🔴🟢🟣 Colors: Red, Green, Violet</li>
-                <li>💰 Place your amount before predicting</li>
-                <li>✅ Result declared after countdown</li>
-                <li>🏆 Correct prediction = Win</li>
-              </ul>
-            </div>
+            <h1 style={styles.rulesTitle}>HACK NUMBER PREDICTION</h1>
+            <p style={styles.subText}>ONLY SURE SHOT PREDICTION FREE GIFT CODE AVAILABLE</p>
+            <p style={styles.hindiText}>बड़ा से बड़ा लॉस 100% <span className='text-green-400'>यहाँ Loss Recover</span></p>
           </div>
 
           <button onClick={handleJoinClick} style={styles.button}>
             Join Telegram Now
           </button>
+
+          <button onClick={handleJoinClick2} style={styles.button2}>
+            Managed by APEX ADS
+          </button> 
         </header>
 
-        <img src="idle2.jpg" alt="Game Promo Bottom" style={styles.image} />
+        <img src="One.jpeg" alt="Game Promo" style={styles.promoImage} />
       </div>
     </div>
   );
@@ -55,79 +53,104 @@ function App() {
 
 const styles = {
   wrapper: {
-    minHeight: '100vh', // Changed to minHeight for long content
+    minHeight: '100vh',
     display: 'flex',
     justifyContent: 'center',
-    backgroundColor: '#0f172a',
-    color: 'white',
-    fontFamily: 'Arial, sans-serif',
-    padding: '20px 10px',
+    backgroundColor: '#f8fafc', // Slightly off-white for better contrast
+    fontFamily: 'system-ui, -apple-system, sans-serif',
+    padding: '20px 15px',
   },
   container: {
     width: '100%',
-    maxWidth: '500px', // Keeps it mobile-sized even on desktop
+    maxWidth: '450px',
     display: 'flex',
     flexDirection: 'column',
-    gap: '20px',
+    gap: '25px',
   },
   header: {
     textAlign: 'center',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    backgroundColor: '#ffffff',
+    padding: '30px 20px',
+    borderRadius: '24px',
+    boxShadow: '0 10px 25px rgba(0,0,0,0.05)',
   },
-  image: {
+  logoRing: {
+    width: '100px',
+    height: '100px',
+    borderRadius: '50%',
+    padding: '5px',
+    background: 'linear-gradient(45deg, #0088cc, #00ffcc)', // The "Ring" effect
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: '20px',
+    boxShadow: '0 4px 15px rgba(0, 136, 204, 0.3)',
+  },
+  circularImage: {
     width: '100%',
-    height: 'auto',
-    borderRadius: '12px',
-    marginBottom: '15px',
-    boxShadow: '0 4px 15px rgba(0,0,0,0.5)',
-  },
-  title: {
-    fontSize: '24px',
-    margin: '10px 0',
-    lineHeight: '1.2',
+    height: '100%',
+    borderRadius: '50%',
+    objectFit: 'cover',
+    backgroundColor: 'white',
   },
   contentBox: {
-    textAlign: 'left', // Better readability for rules
-    backgroundColor: 'rgba(255, 255, 255, 0.05)',
-    padding: '15px',
-    borderRadius: '10px',
-    width: '100%',
-  },
-  description: {
-    fontSize: '16px',
-    lineHeight: '1.5',
-    color: '#cbd5e1',
-    marginBottom: '15px',
+    margin: '10px 0',
   },
   rulesTitle: {
-    fontSize: '18px',
-    marginBottom: '10px',
-    color: '#0088cc',
+    fontSize: '22px',
+    fontWeight: '900',
+    color: '#1e293b',
+    letterSpacing: '1px',
+    margin: '0 0 10px 0',
   },
-  ul: {
-    listStyleType: 'none',
-    padding: 0,
-    margin: 0,
-    fontSize: '15px',
-    lineHeight: '2', // Adds breathing room between rules
+  subText: {
+    color: '#475569',
+    fontSize: '14px',
+    fontWeight: 'bold',
+    margin: '5px 0',
+  },
+  hindiText: {
+    color: '#dc2626', // Red for "Loss Recover" to stand out
+    fontSize: '16px',
+    fontWeight: '800',
+    marginTop: '10px',
   },
   button: {
-    width: '100%', // Full width button is easier to tap on mobile
-    maxWidth: '300px',
-    padding: '16px 24px',
+    width: '100%',
+    padding: '16px',
     fontSize: '18px',
     fontWeight: 'bold',
     backgroundColor: '#0088cc',
     color: 'white',
     border: 'none',
-    borderRadius: '50px',
+    borderRadius: '12px',
     cursor: 'pointer',
-    marginTop: '25px',
-    boxShadow: '0 4px 15px rgba(0, 136, 204, 0.4)',
-    transition: 'transform 0.2s',
-  }
+    marginTop: '20px',
+    boxShadow: '0 4px 12px rgba(0, 136, 204, 0.4)',
+    transition: '0.2s',
+  },
+  button2: {
+    width: '100%',
+    padding: '12px',
+    fontSize: '14px',
+    fontWeight: '700',
+    backgroundColor: 'transparent',
+    color: '#0088cc',
+    border: '2px solid #e2e8f0',
+    borderRadius: '12px',
+    cursor: 'pointer',
+    marginTop: '12px',
+    textTransform: 'uppercase',
+  },
+  promoImage: {
+    width: '100%',
+    height: 'auto',
+    borderRadius: '20px',
+    boxShadow: '0 8px 20px rgba(0,0,0,0.1)',
+  },
 };
 
 export default App;
