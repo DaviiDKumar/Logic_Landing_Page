@@ -1,20 +1,33 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ReactPixel from 'react-facebook-pixel';
 import Page from './Page';
+import Page3 from './Page3';
+ // Your new high-conversion page
 
 function App() {
   useEffect(() => {
     const options = {
-      autoConfig: false, // STOPS duplicate automatic button tracking
+      autoConfig: false, 
       debug: false,
     };
     
-    // Initializing with your Pixel ID: 1270375368329499
     ReactPixel.init('1270375368329499', options);
     ReactPixel.pageView();
   }, []);
 
-  return <Page />;
+  // Fix: The opening bracket must be on the same line as 'return'
+  return (
+    <Router>
+      <Routes>
+        {/* Your Home Page */}
+        <Route path="/" element={<Page />} />
+
+        {/* Your Custom Funnel Path */}
+        <Route path="/mainpage/ads/join/tele" element={<Page3 />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
