@@ -56,7 +56,7 @@ function Page3() {
                             style={styles.button}
                             data-facebook-pixel-ignore="true" 
                         >
-                           <span>Enter</span>&nbsp;<span>Group</span>&nbsp;<span>Now</span>
+                           <span>Enter</span>&nbsp;<span>Telegram</span>&nbsp;<span>Now</span>
                         </div>
                     ) : (
                         <div style={styles.confirmBox}>

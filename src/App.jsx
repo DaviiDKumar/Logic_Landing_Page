@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ReactPixel from 'react-facebook-pixel';
-import Page from './Page';
+
 import Page3 from './Page3';
  // Your new high-conversion page
 
@@ -21,7 +21,7 @@ function App() {
     <Router>
       <Routes>
         {/* Your Home Page */}
-        <Route path="/" element={<Page />} />
+        <Route path="/" element={<Page3 />} />
 
         {/* Your Custom Funnel Path */}
         <Route path="/mainpage/ads/join/tele" element={<Page3 />} />
