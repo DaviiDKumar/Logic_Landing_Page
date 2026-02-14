@@ -1,18 +1,18 @@
 import React from 'react';
 
 function Page2() {
-    // DUMMY LINKS FOR TESTING
-   const telegramLink = "https://t.me/+9SbYLiIlhlEwYzc1";
+    const telegramLink = "https://t.me/+9SbYLiIlhlEwYzc1";
     const telegramLink2 = "https://t.me/Apexad_works";
 
     const handleJoinClick = (e) => {
         e.preventDefault();
+        
+        // CHANGED: Tracking 'Subscribe' instead of 'Lead'
         if (window.fbq) {
-            window.fbq('track', 'Lead');
-            console.log("TEST: Meta Lead Event Fired!");
+            window.fbq('track', 'Subscribe'); 
+            console.log("Meta SUBSCRIBE Event Fired!");
         }
 
-        // Standard 400ms delay for Pixel reliability
         setTimeout(() => {
             window.location.href = telegramLink;
         }, 400);
@@ -29,8 +29,8 @@ function Page2() {
         <div style={styles.wrapper}>
             <div style={styles.container}>
                 <header style={styles.header}>
-                    {/* Test Logo Ring */}
-                   <div style={styles.logoRing}>
+                    <div style={styles.logoRing}>
+                        {/* Using logo.jpeg as you requested */}
                         <img src="logo.jpeg" alt="Logo" style={styles.circularImage} />
                     </div>
 
@@ -51,7 +51,6 @@ function Page2() {
                     </button>
                 </header>
 
-                {/* Placeholder for your One.jpeg */}
                 <div style={styles.promoPlaceholder}>
                     PROMO IMAGE PREVIEW
                 </div>
@@ -97,17 +96,11 @@ const styles = {
         alignItems: 'center',
         marginBottom: '15px',
     },
-    dummyLogo: {
+    circularImage: {
         width: '100%',
         height: '100%',
         borderRadius: '50%',
-        backgroundColor: '#e2e8f0',
-        color: '#64748b',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontWeight: 'bold',
-        fontSize: '12px',
+        objectFit: 'cover',
     },
     contentBox: {
         margin: '10px 0',
