@@ -1,18 +1,22 @@
 import React from 'react';
+import ReactPixel from 'react-facebook-pixel';
 
-function Page2() {
+function Page() {
     const telegramLink = "https://t.me/+9SbYLiIlhlEwYzc1";
     const telegramLink2 = "https://t.me/Apexad_works";
 
     const handleJoinClick = (e) => {
         e.preventDefault();
         
-        // CHANGED: Tracking 'Subscribe' instead of 'Lead'
-        if (window.fbq) {
-            window.fbq('track', 'Subscribe'); 
-            console.log("Meta SUBSCRIBE Event Fired!");
-        }
+        // Track the Lead event specifically on button click
+        ReactPixel.track('Lead', {
+            content_name: 'Telegram Join',
+            content_category: 'Hack Prediction'
+        });
+        
+        console.log("Meta LEAD Event Fired!");
 
+        // 400ms delay ensures Meta receives the data on slow mobile networks
         setTimeout(() => {
             window.location.href = telegramLink;
         }, 400);
@@ -30,30 +34,27 @@ function Page2() {
             <div style={styles.container}>
                 <header style={styles.header}>
                     <div style={styles.logoRing}>
-                        {/* Using logo.jpeg as you requested */}
                         <img src="logo.jpeg" alt="Logo" style={styles.circularImage} />
                     </div>
 
                     <div style={styles.contentBox}>
-                        <h1 style={styles.rulesTitle}>DUMMY TEST PAGE</h1>
-                        <p style={styles.subText}>VERIFYING PIXEL TRACKING AND MOBILE UI</p>
+                        <h1 style={styles.rulesTitle}>HACK NUMBER PREDICTION</h1>
+                        <p style={styles.subText}>ONLY SURE SHOT PREDICTION FREE GIFT CODE AVAILABLE</p>
                         <p style={styles.hindiText}>
-                            UI Testing 100% <span style={{ color: '#22c55e' }}>Responsive Layout</span>
+                            बड़ा से बड़ा लॉस 100% <span style={{ color: '#22c55e' }}>यहाँ Loss Recover</span>
                         </p>
                     </div>
 
                     <button onClick={handleJoinClick} style={styles.button}>
-                        Test: Join Telegram
+                        Join Telegram Now
                     </button>
 
                     <button onClick={handleJoinClick2} style={styles.button2}>
-                        Test: Managed by APEX
+                        Managed by APEX ADS
                     </button>
                 </header>
 
-                <div style={styles.promoPlaceholder}>
-                    PROMO IMAGE PREVIEW
-                </div>
+                <img src="One.jpeg" alt="Game Promo" style={styles.promoImage} />
             </div>
         </div>
     );
@@ -64,7 +65,7 @@ const styles = {
         minHeight: '100vh',
         display: 'flex',
         justifyContent: 'center',
-        backgroundColor: '#f1f5f9',
+        backgroundColor: '#f1f5f9', 
         fontFamily: 'system-ui, -apple-system, sans-serif',
         padding: '20px 15px',
     },
@@ -95,12 +96,14 @@ const styles = {
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: '15px',
+        boxShadow: '0 4px 15px rgba(0, 136, 204, 0.3)',
     },
     circularImage: {
         width: '100%',
         height: '100%',
         borderRadius: '50%',
         objectFit: 'cover',
+        backgroundColor: 'white',
     },
     contentBox: {
         margin: '10px 0',
@@ -113,7 +116,7 @@ const styles = {
     },
     subText: {
         color: '#475569',
-        fontSize: '13px',
+        fontSize: '14px',
         fontWeight: '700',
         margin: '5px 0',
     },
@@ -121,6 +124,7 @@ const styles = {
         color: '#dc2626',
         fontSize: '17px',
         fontWeight: '800',
+        marginTop: '10px',
     },
     button: {
         width: '100%',
@@ -146,19 +150,14 @@ const styles = {
         borderRadius: '12px',
         cursor: 'pointer',
         marginTop: '15px',
+        textTransform: 'uppercase',
     },
-    promoPlaceholder: {
+    promoImage: {
         width: '100%',
-        height: '250px',
-        backgroundColor: '#e2e8f0',
+        height: 'auto',
         borderRadius: '20px',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        color: '#94a3b8',
-        fontWeight: 'bold',
-        border: '2px dashed #cbd5e1'
+        boxShadow: '0 8px 20px rgba(0,0,0,0.1)',
     },
 };
 
-export default Page2;
+export default Page;
