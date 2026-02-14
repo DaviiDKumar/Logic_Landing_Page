@@ -29,7 +29,7 @@ function Page() {
         }, 400);
     };
 
-    return (
+   return (
         <div style={styles.wrapper}>
             <div style={styles.container}>
                 <header style={styles.header}>
@@ -65,7 +65,7 @@ const styles = {
         minHeight: '100vh',
         display: 'flex',
         justifyContent: 'center',
-        backgroundColor: '#f1f5f9', 
+        backgroundColor: '#f1f5f9',
         fontFamily: 'system-ui, -apple-system, sans-serif',
         padding: '20px 15px',
     },
@@ -119,6 +119,7 @@ const styles = {
         fontSize: '14px',
         fontWeight: '700',
         margin: '5px 0',
+        lineHeight: '1.4',
     },
     hindiText: {
         color: '#dc2626',
