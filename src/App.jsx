@@ -9,23 +9,25 @@ function App() {
     if (window.fbq) {
       window.fbq('track', 'Lead');
     }
+    
+    // Using location.href is MUCH better for mobile ads
+    // It prevents pop-up blockers from stopping the redirect
     setTimeout(() => {
-      window.open(telegramLink, '_blank');
-    }, 300);
+      window.location.href = telegramLink;
+    }, 400); 
   };
 
   const handleJoinClick2 = (e) => {
     e.preventDefault();
     setTimeout(() => {
-      window.open(telegramLink2, '_blank');
-    }, 300);
+      window.location.href = telegramLink2;
+    }, 400);
   };
 
   return (
     <div style={styles.wrapper}>
       <div style={styles.container}>
         <header style={styles.header}>
-          {/* Logo in a Circular Ring */}
           <div style={styles.logoRing}>
             <img src="logo.jpeg" alt="Logo" style={styles.circularImage} />
           </div>
@@ -33,7 +35,9 @@ function App() {
           <div style={styles.contentBox}>
             <h1 style={styles.rulesTitle}>HACK NUMBER PREDICTION</h1>
             <p style={styles.subText}>ONLY SURE SHOT PREDICTION FREE GIFT CODE AVAILABLE</p>
-            <p style={styles.hindiText}>बड़ा से बड़ा लॉस 100% <span className='text-green-400'>यहाँ Loss Recover</span></p>
+            <p style={styles.hindiText}>
+              बड़ा से बड़ा लॉस 100% <span style={{color: '#22c55e'}}>यहाँ Loss Recover</span>
+            </p>
           </div>
 
           <button onClick={handleJoinClick} style={styles.button}>
@@ -56,7 +60,7 @@ const styles = {
     minHeight: '100vh',
     display: 'flex',
     justifyContent: 'center',
-    backgroundColor: '#f8fafc', // Slightly off-white for better contrast
+    backgroundColor: '#f1f5f9', 
     fontFamily: 'system-ui, -apple-system, sans-serif',
     padding: '20px 15px',
   },
@@ -65,7 +69,7 @@ const styles = {
     maxWidth: '450px',
     display: 'flex',
     flexDirection: 'column',
-    gap: '25px',
+    gap: '20px',
   },
   header: {
     textAlign: 'center',
@@ -82,11 +86,11 @@ const styles = {
     height: '100px',
     borderRadius: '50%',
     padding: '5px',
-    background: 'linear-gradient(45deg, #0088cc, #00ffcc)', // The "Ring" effect
+    background: 'linear-gradient(45deg, #0088cc, #00ffcc)',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: '20px',
+    marginBottom: '15px',
     boxShadow: '0 4px 15px rgba(0, 136, 204, 0.3)',
   },
   circularImage: {
@@ -103,46 +107,46 @@ const styles = {
     fontSize: '22px',
     fontWeight: '900',
     color: '#1e293b',
-    letterSpacing: '1px',
-    margin: '0 0 10px 0',
+    margin: '0 0 8px 0',
   },
   subText: {
     color: '#475569',
     fontSize: '14px',
-    fontWeight: 'bold',
+    fontWeight: '700',
     margin: '5px 0',
+    lineHeight: '1.4',
   },
   hindiText: {
-    color: '#dc2626', // Red for "Loss Recover" to stand out
-    fontSize: '16px',
+    color: '#dc2626',
+    fontSize: '17px',
     fontWeight: '800',
     marginTop: '10px',
   },
   button: {
     width: '100%',
-    padding: '16px',
+    padding: '18px',
     fontSize: '18px',
     fontWeight: 'bold',
     backgroundColor: '#0088cc',
     color: 'white',
     border: 'none',
-    borderRadius: '12px',
+    borderRadius: '14px',
     cursor: 'pointer',
     marginTop: '20px',
     boxShadow: '0 4px 12px rgba(0, 136, 204, 0.4)',
-    transition: '0.2s',
+    transition: '0.2s active',
   },
   button2: {
     width: '100%',
     padding: '12px',
-    fontSize: '14px',
+    fontSize: '13px',
     fontWeight: '700',
     backgroundColor: 'transparent',
-    color: '#0088cc',
-    border: '2px solid #e2e8f0',
+    color: '#64748b',
+    border: '1px solid #e2e8f0',
     borderRadius: '12px',
     cursor: 'pointer',
-    marginTop: '12px',
+    marginTop: '15px',
     textTransform: 'uppercase',
   },
   promoImage: {
