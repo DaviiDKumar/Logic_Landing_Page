@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactPixel from 'react-facebook-pixel';
 
 function Page() {
     const telegramLink = "https://t.me/+9SbYLiIlhlEwYzc1";
@@ -6,11 +7,16 @@ function Page() {
 
     const handleJoinClick = (e) => {
         e.preventDefault();
-        if (window.fbq) {
-            window.fbq('track', 'Lead');
-        }
+        
+        // Track the Lead event specifically on button click
+        ReactPixel.track('Lead', {
+            content_name: 'Telegram Join',
+            content_category: 'Hack Prediction'
+        });
+        
+        console.log("Meta LEAD Event Fired!");
 
-        // Delay to ensure Meta Pixel captures the event before redirecting
+        // 400ms delay ensures Meta receives the data on slow mobile networks
         setTimeout(() => {
             window.location.href = telegramLink;
         }, 400);
@@ -23,8 +29,7 @@ function Page() {
         }, 400);
     };
 
-    // FIX: You MUST have a return statement here!
-    return (
+   return (
         <div style={styles.wrapper}>
             <div style={styles.container}>
                 <header style={styles.header}>
@@ -55,7 +60,6 @@ function Page() {
     );
 }
 
-// Ensure the styles are defined outside or inside, but reachable
 const styles = {
     wrapper: {
         minHeight: '100vh',

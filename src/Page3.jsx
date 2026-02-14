@@ -14,21 +14,23 @@ function Page3() {
     }, [showConfirm, timeLeft]);
 
     const handleInitialClick = (e) => {
-        if (e) e.stopPropagation(); 
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation(); 
+        }
         setShowConfirm(true);
     };
 
     const handleFinalJoin = (e) => {
-        // We let the event propagate here so Meta's auto-tracker can see the click
         if (ReactPixel) {
             ReactPixel.track('Lead', {
-                content_name: 'Official_Join_Click'
+                content_name: 'Verified_Join_Conversion',
+                content_category: 'Hack Prediction'
             });
         }
-
         setTimeout(() => {
             window.location.href = telegramLink;
-        }, 500);
+        }, 400);
     };
 
     return (
@@ -36,48 +38,45 @@ function Page3() {
             <div style={styles.container}>
                 <header style={styles.header}>
                     <div style={styles.logoRing}>
-                        <div style={styles.dummyCircle}>CP</div>
+                        <img src="/logo.jpeg" alt="Logo" style={styles.circularImage} />
                     </div>
 
                     <div style={styles.contentBox}>
-                        <h1 style={styles.rulesTitle}>COMMUNITY PORTAL</h1>
-                        <p style={styles.subText}>REAL-TIME UPDATES & EXCLUSIVE INSIGHTS</p>
+                        <h1 style={styles.rulesTitle}>HACK NUMBER PREDICTION</h1>
+                        <p style={styles.subText}>ONLY SURE SHOT PREDICTION FREE GIFT CODE AVAILABLE</p>
                         <p style={styles.hindiText}>
-                            Direct Access <span style={{ color: '#22c55e' }}>Is Now Active</span>
+                            बड़ा से बड़ा लॉस 100% <span style={{ color: '#22c55e' }}>यहाँ Loss Recover</span>
                         </p>
                     </div>
 
                     {!showConfirm ? (
-                        /* First button is a 'div' - Meta ignores this */
+                        /* FIX: Added data-facebook-pixel-ignore and broken up text to stop auto-detection */
                         <div 
                             onClick={handleInitialClick} 
                             style={styles.button}
+                            data-facebook-pixel-ignore="true" 
                         >
-                            <span>Proceed to Group</span>
+                           <span>Enter</span>&nbsp;<span>Group</span>&nbsp;<span>Now</span>
                         </div>
                     ) : (
                         <div style={styles.confirmBox}>
-                            <p style={styles.confirmText}>⚠️ Session Expiring Soon:</p>
+                            <p style={styles.confirmText}>⚠️ Group Link Expires In:</p>
                             <div style={styles.timer}>00:{timeLeft < 10 ? `0${timeLeft}` : timeLeft}</div>
-                            <p style={styles.verifyNote}>Please verify your session to enter the group</p>
+                            <p style={styles.verifyNote}>Verify your session to enter the group</p>
                             
-                            {/* SECOND BUTTON: Actual <button> tag for Meta Auto-Detection */}
                             <button 
                                 onClick={handleFinalJoin} 
                                 style={styles.confirmButton}
                                 id="official-join-button"
                             >
-                                ✅ OPEN OFFICIAL LINK
+                                ✅ ACCESS TELEGRAM HACK
                             </button>
                         </div>
                     )}
                 </header>
 
-                <div style={styles.promoPlaceholder}>
-                    COMMUNITY INSIGHTS PREVIEW
-                </div>
-                
-                <p style={styles.footerText}>Secure Access Gateway</p>
+                <img src="/One.jpeg" alt="Game Promo" style={styles.promoImage} />
+                <p style={styles.footerText}>Managed by APEX ADS</p>
             </div>
         </div>
     );
@@ -112,84 +111,79 @@ const styles = {
         width: '100%'
     },
     logoRing: {
-        width: '80px',
-        height: '80px',
+        width: '100px',
+        height: '100px',
         borderRadius: '50%',
-        padding: '4px',
+        padding: '5px',
         background: 'linear-gradient(45deg, #0088cc, #00ffcc)',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: '15px',
     },
-    dummyCircle: {
+    circularImage: {
         width: '100%',
         height: '100%',
         borderRadius: '50%',
-        backgroundColor: '#cbd5e1',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        color: 'white',
-        fontWeight: 'bold',
-        fontSize: '24px'
+        objectFit: 'cover',
+        backgroundColor: 'white',
     },
     rulesTitle: {
         fontSize: '22px',
-        fontWeight: '800',
+        fontWeight: '900',
         color: '#1e293b',
         margin: '0 0 8px 0',
     },
     subText: {
-        color: '#64748b',
-        fontSize: '12px',
-        fontWeight: 'bold',
-        marginBottom: '5px'
+        color: '#475569',
+        fontSize: '14px',
+        fontWeight: '700',
+        margin: '5px 0',
     },
     hindiText: {
-        color: '#1e293b',
-        fontSize: '16px',
-        fontWeight: '700',
+        color: '#dc2626',
+        fontSize: '17px',
+        fontWeight: '800',
+        marginTop: '10px',
     },
     button: {
         width: '100%',
-        padding: '16px',
+        padding: '18px',
         fontSize: '18px',
         fontWeight: 'bold',
         backgroundColor: '#0088cc',
         color: 'white',
-        borderRadius: '12px',
+        borderRadius: '14px',
         cursor: 'pointer',
         marginTop: '20px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         userSelect: 'none',
-        border: 'none'
+        border: 'none',
     },
     confirmBox: {
         marginTop: '20px',
         padding: '20px',
-        backgroundColor: '#f8fafc',
+        backgroundColor: '#fff1f2',
         borderRadius: '16px',
-        border: '1px solid #e2e8f0',
+        border: '2px solid #fda4af',
         width: '100%',
-        textAlign: 'center'
     },
     timer: {
         fontSize: '32px',
         fontWeight: '900',
-        color: '#0088cc', 
+        color: '#dc2626', 
         margin: '10px 0'
     },
     confirmText: {
-        color: '#475569',
+        color: '#9f1239',
         fontWeight: 'bold',
         fontSize: '14px',
     },
     verifyNote: {
         fontSize: '12px',
-        color: '#64748b',
+        color: '#475569',
         marginBottom: '15px'
     },
     confirmButton: {
@@ -197,34 +191,22 @@ const styles = {
         padding: '16px',
         fontSize: '16px',
         fontWeight: 'bold',
-        backgroundColor: '#0f172a',
+        backgroundColor: '#059669',
         color: 'white',
+        border: 'none',
         borderRadius: '12px',
         cursor: 'pointer',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        userSelect: 'none',
-        border: 'none',
-        outline: 'none'
     },
-    promoPlaceholder: {
+    promoImage: {
         width: '100%',
-        height: '200px',
-        backgroundColor: '#e2e8f0',
+        height: 'auto',
         borderRadius: '20px',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        color: '#94a3b8',
-        fontWeight: 'bold',
-        border: '2px dashed #cbd5e1'
     },
     footerText: {
-        fontSize: '11px',
+        fontSize: '12px',
         color: '#94a3b8',
         fontWeight: 'bold',
-        textTransform: 'uppercase'
+        textTransform: 'uppercase',
     }
 };
 
