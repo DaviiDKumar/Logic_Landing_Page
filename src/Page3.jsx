@@ -1,33 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import ReactPixel from 'react-facebook-pixel';
 
 function Page3() {
-    const [showConfirm, setShowConfirm] = useState(false);
-    const [timeLeft, setTimeLeft] = useState(60); 
     const telegramLink = "https://t.me/+9SbYLiIlhlEwYzc1";
 
-    useEffect(() => {
-        if (showConfirm && timeLeft > 0) {
-            const timer = setTimeout(() => setTimeLeft(timeLeft - 1), 1000);
-            return () => clearTimeout(timer);
-        }
-    }, [showConfirm, timeLeft]);
-
-    const handleInitialClick = (e) => {
-        if (e) {
-            e.preventDefault();
-            e.stopPropagation(); 
-        }
-        setShowConfirm(true);
-    };
-
-    const handleFinalJoin = (e) => {
+    const handleJoinClick = () => {
+        // 1. Manually track only the SUBSCRIBE event
         if (ReactPixel) {
-            ReactPixel.track('Lead', {
-                content_name: 'Verified_Join_Conversion',
+            ReactPixel.track('Subscribe', {
+                content_name: 'Telegram_Engagement',
                 content_category: 'Hack Prediction'
             });
         }
+
+        // 2. Wait 400ms for the pixel to send data, then redirect
         setTimeout(() => {
             window.location.href = telegramLink;
         }, 400);
@@ -49,30 +35,17 @@ function Page3() {
                         </p>
                     </div>
 
-                    {!showConfirm ? (
-                        /* FIX: Added data-facebook-pixel-ignore and broken up text to stop auto-detection */
-                        <div 
-                            onClick={handleInitialClick} 
-                            style={styles.button}
-                            data-facebook-pixel-ignore="true" 
-                        >
-                           <span>Enter</span>&nbsp;<span>Telegram</span>&nbsp;<span>Now</span>
-                        </div>
-                    ) : (
-                        <div style={styles.confirmBox}>
-                            <p style={styles.confirmText}>⚠️ Group Link Expires In:</p>
-                            <div style={styles.timer}>00:{timeLeft < 10 ? `0${timeLeft}` : timeLeft}</div>
-                            <p style={styles.verifyNote}>Verify your session to enter the group</p>
-                            
-                            <button 
-                                onClick={handleFinalJoin} 
-                                style={styles.confirmButton}
-                                id="official-join-button"
-                            >
-                                ✅ ACCESS TELEGRAM HACK
-                            </button>
-                        </div>
-                    )}
+                    {/* data-facebook-pixel-ignore stops the 'Automatically Detected' event */}
+                    <button 
+                        onClick={handleJoinClick} 
+                        style={styles.button}
+                        data-facebook-pixel-ignore="true"
+                        id="official-join-btn"
+                    >
+                        ✅ JOIN TELEGRAM NOW
+                    </button>
+                    
+                    <p style={styles.verifyNote}>Click above to get instant access</p>
                 </header>
 
                 <img src="/One.jpeg" alt="Game Promo" style={styles.promoImage} />
@@ -148,54 +121,21 @@ const styles = {
     },
     button: {
         width: '100%',
-        padding: '18px',
+        padding: '20px',
         fontSize: '18px',
         fontWeight: 'bold',
         backgroundColor: '#0088cc',
         color: 'white',
         borderRadius: '14px',
         cursor: 'pointer',
-        marginTop: '20px',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        userSelect: 'none',
+        marginTop: '25px',
         border: 'none',
-    },
-    confirmBox: {
-        marginTop: '20px',
-        padding: '20px',
-        backgroundColor: '#fff1f2',
-        borderRadius: '16px',
-        border: '2px solid #fda4af',
-        width: '100%',
-    },
-    timer: {
-        fontSize: '32px',
-        fontWeight: '900',
-        color: '#dc2626', 
-        margin: '10px 0'
-    },
-    confirmText: {
-        color: '#9f1239',
-        fontWeight: 'bold',
-        fontSize: '14px',
+        boxShadow: '0 4px 15px rgba(0, 136, 204, 0.3)',
     },
     verifyNote: {
         fontSize: '12px',
-        color: '#475569',
-        marginBottom: '15px'
-    },
-    confirmButton: {
-        width: '100%',
-        padding: '16px',
-        fontSize: '16px',
-        fontWeight: 'bold',
-        backgroundColor: '#059669',
-        color: 'white',
-        border: 'none',
-        borderRadius: '12px',
-        cursor: 'pointer',
+        color: '#94a3b8',
+        marginTop: '12px'
     },
     promoImage: {
         width: '100%',
