@@ -22,10 +22,10 @@ function Page3() {
 
                     <div style={styles.contentBox}>
                         <h1 style={styles.rulesTitle}>OFFICIAL COMMUNITY RULES</h1>
-                        <p style={styles.subText}>LEARN STRATEGIC ANALYSIS & MARKET TRENDS</p>
+                        <p style={styles.subText}>Basic colour game</p>
                         
                         <div style={styles.rulesBox}>
-                            <p style={styles.ruleItem}>1. Daily Market Updates & Insights</p>
+                            <p style={styles.ruleItem}>1. Daily  Updates & strategy</p>
                             <p style={styles.ruleItem}>2. No Spam or Promotional Links</p>
                             <p style={styles.ruleItem}>3. Respect All Community Members</p>
                         </div>
