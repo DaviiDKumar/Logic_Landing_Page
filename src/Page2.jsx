@@ -1,40 +1,29 @@
 import React from 'react';
-import ReactPixel from 'react-facebook-pixel';
 
-function Page() {
+function Page2() {
     const telegramLink = "https://t.me/+9SbYLiIlhlEwYzc1";
-    const telegramLink2 = "https://t.me/Apexad_works";
 
-    const handleJoinClick = (e) => {
-        e.preventDefault();
-        
-        // Track the Lead event specifically on button click
-        ReactPixel.track('Lead', {
-            content_name: 'Telegram Join',
-            content_category: 'Hack Prediction'
-        });
-        
-        console.log("Meta LEAD Event Fired!");
+    const handleJoinClick = () => {
+        // 1. Manually fire the Subscribe event
+        if (window.fbq) {
+            window.fbq('track', 'Subscribe', {
+                content_name: 'Telegram Join Button',
+                content_category: 'Engagement'
+            });
+        }
 
-        // 400ms delay ensures Meta receives the data on slow mobile networks
+        // 2. Wait 500ms to ensure Meta receives the event before redirecting
         setTimeout(() => {
             window.location.href = telegramLink;
-        }, 400);
+        }, 500);
     };
 
-    const handleJoinClick2 = (e) => {
-        e.preventDefault();
-        setTimeout(() => {
-            window.location.href = telegramLink2;
-        }, 400);
-    };
-
-   return (
+    return (
         <div style={styles.wrapper}>
             <div style={styles.container}>
                 <header style={styles.header}>
                     <div style={styles.logoRing}>
-                        <img src="logo.jpeg" alt="Logo" style={styles.circularImage} />
+                        <img src="/logo.jpeg" alt="Logo" style={styles.circularImage} />
                     </div>
 
                     <div style={styles.contentBox}>
@@ -45,120 +34,37 @@ function Page() {
                         </p>
                     </div>
 
-                    <button onClick={handleJoinClick} style={styles.button}>
-                        Join Telegram Now
+                    <button 
+                        onClick={handleJoinClick} 
+                        style={styles.button}
+                        id="join-tg-btn"
+                    >
+                        ✅ JOIN TELEGRAM NOW
                     </button>
-
-                    <button onClick={handleJoinClick2} style={styles.button2}>
-                        Managed by APEX ADS
-                    </button>
+                    
+                    <p style={styles.verifyNote}>Click above to get instant access</p>
                 </header>
 
-                <img src="One.jpeg" alt="Game Promo" style={styles.promoImage} />
+                <img src="/One.jpeg" alt="Game Promo" style={styles.promoImage} />
+                <p style={styles.footerText}>Managed by APEX ADS</p>
             </div>
         </div>
     );
 }
 
 const styles = {
-    wrapper: {
-        minHeight: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        backgroundColor: '#f1f5f9',
-        fontFamily: 'system-ui, -apple-system, sans-serif',
-        padding: '20px 15px',
-    },
-    container: {
-        width: '100%',
-        maxWidth: '450px',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '20px',
-    },
-    header: {
-        textAlign: 'center',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        backgroundColor: '#ffffff',
-        padding: '30px 20px',
-        borderRadius: '24px',
-        boxShadow: '0 10px 25px rgba(0,0,0,0.05)',
-    },
-    logoRing: {
-        width: '100px',
-        height: '100px',
-        borderRadius: '50%',
-        padding: '5px',
-        background: 'linear-gradient(45deg, #0088cc, #00ffcc)',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginBottom: '15px',
-        boxShadow: '0 4px 15px rgba(0, 136, 204, 0.3)',
-    },
-    circularImage: {
-        width: '100%',
-        height: '100%',
-        borderRadius: '50%',
-        objectFit: 'cover',
-        backgroundColor: 'white',
-    },
-    contentBox: {
-        margin: '10px 0',
-    },
-    rulesTitle: {
-        fontSize: '22px',
-        fontWeight: '900',
-        color: '#1e293b',
-        margin: '0 0 8px 0',
-    },
-    subText: {
-        color: '#475569',
-        fontSize: '14px',
-        fontWeight: '700',
-        margin: '5px 0',
-        lineHeight: '1.4',
-    },
-    hindiText: {
-        color: '#dc2626',
-        fontSize: '17px',
-        fontWeight: '800',
-        marginTop: '10px',
-    },
-    button: {
-        width: '100%',
-        padding: '18px',
-        fontSize: '18px',
-        fontWeight: 'bold',
-        backgroundColor: '#0088cc',
-        color: 'white',
-        border: 'none',
-        borderRadius: '14px',
-        cursor: 'pointer',
-        marginTop: '20px',
-        boxShadow: '0 4px 12px rgba(0, 136, 204, 0.4)',
-    },
-    button2: {
-        width: '100%',
-        padding: '12px',
-        fontSize: '13px',
-        fontWeight: '700',
-        backgroundColor: 'transparent',
-        color: '#64748b',
-        border: '1px solid #e2e8f0',
-        borderRadius: '12px',
-        cursor: 'pointer',
-        marginTop: '15px',
-        textTransform: 'uppercase',
-    },
-    promoImage: {
-        width: '100%',
-        height: 'auto',
-        borderRadius: '20px',
-        boxShadow: '0 8px 20px rgba(0,0,0,0.1)',
-    },
+    wrapper: { minHeight: '100vh', display: 'flex', justifyContent: 'center', backgroundColor: '#f1f5f9', fontFamily: 'system-ui, -apple-system, sans-serif', padding: '20px 15px' },
+    container: { width: '100%', maxWidth: '450px', display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'center' },
+    header: { textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: '#ffffff', padding: '30px 20px', borderRadius: '24px', boxShadow: '0 10px 25px rgba(0,0,0,0.05)', width: '100%' },
+    logoRing: { width: '100px', height: '100px', borderRadius: '50%', padding: '5px', background: 'linear-gradient(45deg, #0088cc, #00ffcc)', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '15px' },
+    circularImage: { width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover', backgroundColor: 'white' },
+    rulesTitle: { fontSize: '22px', fontWeight: '900', color: '#1e293b', margin: '0 0 8px 0' },
+    subText: { color: '#475569', fontSize: '14px', fontWeight: '700', margin: '5px 0' },
+    hindiText: { color: '#dc2626', fontSize: '17px', fontWeight: '800', marginTop: '10px' },
+    button: { width: '100%', padding: '20px', fontSize: '18px', fontWeight: 'bold', backgroundColor: '#0088cc', color: 'white', borderRadius: '14px', cursor: 'pointer', marginTop: '25px', border: 'none', boxShadow: '0 4px 15px rgba(0, 136, 204, 0.3)' },
+    verifyNote: { fontSize: '12px', color: '#94a3b8', marginTop: '12px' },
+    promoImage: { width: '100%', height: 'auto', borderRadius: '20px' },
+    footerText: { fontSize: '12px', color: '#94a3b8', fontWeight: 'bold', textTransform: 'uppercase' }
 };
 
-export default Page;
+export default Page2;
