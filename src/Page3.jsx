@@ -16,34 +16,43 @@ function Page3() {
         <div style={styles.wrapper}>
             <div style={styles.container}>
                 <header style={styles.header}>
-                    <div style={styles.logoRing}>
-                        <img src="/logo.jpeg" alt="Community Logo" style={styles.circularImage} />
-                    </div>
-
-                    <div style={styles.contentBox}>
-                        <h1 style={styles.rulesTitle}>OFFICIAL COMMUNITY RULES</h1>
-                        <p style={styles.subText}>Basic colour game</p>
+                    <div style={styles.brandIcon}>G</div>
+                    <h1 style={styles.mainTitle}>Game Logic & Probability</h1>
+                    <p style={styles.tagline}>Understanding Digital Sequence Analysis</p>
+                    
+                    <div style={styles.infoCard}>
+                        <h2 style={styles.sectionTitle}>How the Logic Works</h2>
+                        <p style={styles.paragraph}>
+                            This educational community focuses on the mathematical study of digital patterns. 
+                            Users analyze historical data sequences to identify recurring trends based on 
+                            standard probability theories.
+                        </p>
                         
-                        <div style={styles.rulesBox}>
-                            <p style={styles.ruleItem}>1. Daily  Updates & strategy</p>
-                            <p style={styles.ruleItem}>2. No Spam or Promotional Links</p>
-                            <p style={styles.ruleItem}>3. Respect All Community Members</p>
-                        </div>
+                        <h2 style={styles.sectionTitle}>Basic Participation Rules</h2>
+                        <ul style={styles.list}>
+                            <li style={styles.listItem}>✓ <strong>Observation:</strong> Analyze the sequence of red and green indicators.</li>
+                            <li style={styles.listItem}>✓ <strong>Pattern Recognition:</strong> Apply logical formulas to predict the next digit in the sequence.</li>
+                            <li style={styles.listItem}>✓ <strong>Pure Logic:</strong> Our community is for research and entertainment purposes only. No financial transactions are involved.</li>
+                            <li style={styles.listItem}>✓ <strong>Strict Compliance:</strong> We maintain a clean, educational environment for all members.</li>
+                        </ul>
                     </div>
 
                     <button 
                         onClick={handleJoinClick} 
                         style={styles.button}
                     >
-                        ✅ ENTER OFFICIAL TELEGRAM
+                        Join Discussion Group
                     </button>
                     
-                    <p style={styles.verifyNote}>By joining, you agree to our community guidelines.</p>
+                    <p style={styles.disclaimer}>
+                        Note: This group is strictly for discussing game logic and mathematical patterns. 
+                        By joining, you agree to follow our community guidelines.
+                    </p>
                 </header>
 
-                <footer style={styles.footerText}>
-                    APEX DIGITAL CONSULTING <br/>
-                    
+                <footer style={styles.footer}>
+                    <p>© 2026 Apex Adworks | Jaipur, Rajasthan</p>
+                    <p style={styles.footerLinks}>Privacy Policy • Terms of Service • Guidelines</p>
                 </footer>
             </div>
         </div>
@@ -51,18 +60,65 @@ function Page3() {
 }
 
 const styles = {
-    wrapper: { minHeight: '100vh', display: 'flex', justifyContent: 'center', backgroundColor: '#f1f5f9', fontFamily: 'system-ui, -apple-system, sans-serif', padding: '20px 15px' },
-    container: { width: '100%', maxWidth: '450px', display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'center' },
-    header: { textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: '#ffffff', padding: '30px 20px', borderRadius: '24px', boxShadow: '0 10px 25px rgba(0,0,0,0.05)', width: '100%' },
-    logoRing: { width: '80px', height: '80px', borderRadius: '50%', padding: '4px', background: '#0088cc', marginBottom: '15px' },
-    circularImage: { width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' },
-    rulesTitle: { fontSize: '20px', fontWeight: '900', color: '#1e293b', marginBottom: '5px' },
-    subText: { color: '#64748b', fontSize: '12px', fontWeight: 'bold', letterSpacing: '0.5px', marginBottom: '20px' },
-    rulesBox: { textAlign: 'left', width: '100%', backgroundColor: '#f8fafc', padding: '15px', borderRadius: '12px', marginBottom: '20px' },
-    ruleItem: { fontSize: '14px', color: '#475569', margin: '8px 0', fontWeight: '500' },
-    button: { width: '100%', padding: '18px', fontSize: '16px', fontWeight: 'bold', backgroundColor: '#0088cc', color: 'white', borderRadius: '12px', cursor: 'pointer', border: 'none' },
-    verifyNote: { fontSize: '11px', color: '#94a3b8', marginTop: '15px' },
-    footerText: { fontSize: '10px', color: '#cbd5e1', textAlign: 'center', fontWeight: 'bold', textTransform: 'uppercase' }
+    wrapper: {
+        minHeight: '100vh',
+        backgroundColor: '#f3f4f6',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif',
+        padding: '20px'
+    },
+    container: {
+        maxWidth: '480px',
+        width: '100%',
+        backgroundColor: '#ffffff',
+        borderRadius: '24px',
+        boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)',
+        padding: '40px 30px',
+        textAlign: 'center'
+    },
+    brandIcon: {
+        width: '60px',
+        height: '60px',
+        backgroundColor: '#059669', // Safe Green
+        color: 'white',
+        borderRadius: '18px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: '32px',
+        fontWeight: 'bold',
+        margin: '0 auto 20px'
+    },
+    mainTitle: { fontSize: '24px', color: '#111827', fontWeight: '800', margin: '0 0 8px 0' },
+    tagline: { fontSize: '14px', color: '#6b7280', marginBottom: '30px' },
+    infoCard: {
+        backgroundColor: '#f9fafb',
+        borderRadius: '16px',
+        padding: '24px',
+        textAlign: 'left',
+        marginBottom: '30px',
+        border: '1px solid #e5e7eb'
+    },
+    sectionTitle: { fontSize: '16px', fontWeight: '700', color: '#111827', margin: '15px 0 10px 0' },
+    paragraph: { fontSize: '14px', color: '#4b5563', lineHeight: '1.6', margin: 0 },
+    list: { listStyle: 'none', padding: 0, margin: 0 },
+    listItem: { fontSize: '14px', color: '#4b5563', margin: '12px 0', lineHeight: '1.4' },
+    button: {
+        width: '100%',
+        padding: '18px',
+        backgroundColor: '#059669',
+        color: 'white',
+        border: 'none',
+        borderRadius: '12px',
+        fontSize: '16px',
+        fontWeight: '700',
+        cursor: 'pointer'
+    },
+    disclaimer: { fontSize: '11px', color: '#9ca3af', marginTop: '20px', lineHeight: '1.5' },
+    footer: { marginTop: '40px', borderTop: '1px solid #f3f4f6', paddingTop: '20px', fontSize: '11px', color: '#9ca3af' },
+    footerLinks: { marginTop: '8px', color: '#10b981', fontWeight: '600' }
 };
 
 export default Page3;
