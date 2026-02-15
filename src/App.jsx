@@ -4,7 +4,6 @@ import Page3 from './Page3';
 
 function App() {
   useEffect(() => {
-    // Standard Meta Pixel Integration
     if (!window.fbq) {
       !(function (f, b, e, v, n, t, s) {
         if (f.fbq) return;
@@ -23,7 +22,7 @@ function App() {
         s.parentNode.insertBefore(t, s);
       })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
 
-      window.fbq('init', '1384293956357388'); // Your new Pixel ID
+      window.fbq('init', '1384293956357388'); 
     }
     
     window.fbq('track', 'PageView');

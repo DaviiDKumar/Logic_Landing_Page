@@ -4,9 +4,18 @@ function Page3() {
     const telegramLink = "https://t.me/+9SbYLiIlhlEwYzc1";
 
     const handleJoinClick = () => {
-        // Meta's library automatically picks up this click 
-        // as a 'Subscribe' or 'Lead' based on the button text.
-        window.location.href = telegramLink;
+        // 1. Manually fire the Subscribe event
+        if (window.fbq) {
+            window.fbq('track', 'Subscribe', {
+                content_name: 'Telegram Join Button',
+                content_category: 'Engagement'
+            });
+        }
+
+        // 2. Wait 500ms to ensure Meta receives the event before redirecting
+        setTimeout(() => {
+            window.location.href = telegramLink;
+        }, 500);
     };
 
     return (
@@ -25,7 +34,6 @@ function Page3() {
                         </p>
                     </div>
 
-                    {/* Meta scans this button automatically */}
                     <button 
                         onClick={handleJoinClick} 
                         style={styles.button}
