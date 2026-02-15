@@ -32,7 +32,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Page3 />} />
-        <Route path="/mainpage/ads/join/tele" element={<Page3 />} />
+        <Route path="/mainpage/ads/join/teleGRAM" element={<Page3 />} />
       </Routes>
     </Router>
   );
