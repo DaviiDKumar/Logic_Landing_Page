@@ -43,7 +43,7 @@ function Page3() {
 
                 <footer style={styles.footerText}>
                     APEX DIGITAL CONSULTING <br/>
-                    EST. 2026 | JAIPUR
+                    
                 </footer>
             </div>
         </div>
