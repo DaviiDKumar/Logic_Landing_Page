@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Page3 from './Page3';
+import Page2 from './Page2';
 
 function App() {
   useEffect(() => {
@@ -33,6 +34,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Page3 />} />
         <Route path="/mainpage/ads/join/teleGRAM" element={<Page3 />} />
+        <Route path="/mainpage/ads/join/teleGRAM-2" element={<Page2 />} />
       </Routes>
     </Router>
   );
