@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Page3() {
-    const telegramLink = "https://t.me/+9SbYLiIlhlEwYzc1";
+    const telegramLink = "https://t.me/+9gIOXQ-VDy04NGM1";
 
     const handleJoinClick = () => {
         // 1. Manually fire the Subscribe event
