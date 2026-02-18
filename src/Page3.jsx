@@ -1,18 +1,18 @@
 import React from 'react';
 
 function Page3() {
-    const telegramLink = "https://t.me/+9SbYLiIlhlEwYzc1";
+    const telegramLink = "https://t.me/+9gIOXQ-VDy04NGM1";
 
     const handleJoinClick = () => {
-        // 1. Manually fire the Subscribe event (Standard for lead generation)
+        // 1. Manually fire the Subscribe event
         if (window.fbq) {
             window.fbq('track', 'Subscribe', {
-                content_name: 'Newsletter_Community_Join',
-                content_category: 'Professional Services'
+                content_name: 'Telegram Join Button',
+                content_category: 'Engagement'
             });
         }
 
-        // 2. 500ms delay to ensure data delivery
+        // 2. Wait 500ms to ensure Meta receives the event before redirecting
         setTimeout(() => {
             window.location.href = telegramLink;
         }, 500);
@@ -23,64 +23,48 @@ function Page3() {
             <div style={styles.container}>
                 <header style={styles.header}>
                     <div style={styles.logoRing}>
-                        {/* Use a professional, clean logo here */}
-                        <img src="/logo.jpeg" alt="Apex Analytics" style={styles.circularImage} />
+                        <img src="/logo.jpeg" alt="Logo" style={styles.circularImage} />
                     </div>
 
                     <div style={styles.contentBox}>
-                        <h1 style={styles.rulesTitle}>APEX AD-TECH INSIGHTS</h1>
-                        <p style={styles.subText}>PROFESSIONAL DIGITAL STRATEGY COMMUNITY</p>
-                        
-                        <div style={styles.neutralRules}>
-                            <h3 style={styles.ruleHeading}>Member Guidelines:</h3>
-                            <ul style={styles.list}>
-                                <li style={styles.listItem}>• Weekly analysis of digital marketing trends.</li>
-                                <li style={styles.listItem}>• Strategic networking with industry peers.</li>
-                                <li style={styles.listItem}>• Sharing of public case studies and data.</li>
-                                <li style={styles.listItem}>• Professionalism and mutual respect required.</li>
-                            </ul>
-                        </div>
+                        <h1 style={styles.rulesTitle}>HACK NUMBER PREDICTION</h1>
+                        <p style={styles.subText}>ONLY SURE SHOT PREDICTION FREE GIFT CODE AVAILABLE</p>
+                        <p style={styles.hindiText}>
+                            बड़ा से बड़ा लॉस 100% <span style={{ color: '#22c55e' }}>यहाँ Loss Recover</span>
+                        </p>
                     </div>
 
                     <button 
                         onClick={handleJoinClick} 
                         style={styles.button}
-                        id="member-access-btn"
+                        id="join-tg-btn"
                     >
-                        ACCESS MEMBER COMMUNITY
+                        ✅ JOIN TELEGRAM NOW
                     </button>
                     
-                    <p style={styles.verifyNote}>Secure access for verified professional members.</p>
+                    <p style={styles.verifyNote}>Click above to get instant access</p>
                 </header>
 
-                <div style={styles.footerBrand}>
-                    <p style={styles.footerText}>© 2026 APEX ADWORKS SOLUTIONS</p>
-                    <p style={styles.legalLinks}>Privacy Policy • Terms of Service • Cookie Policy</p>
-                    <p style={styles.locationText}>Jaipur, Rajasthan, India</p>
-                </div>
+                <img src="/One.jpeg" alt="Game Promo" style={styles.promoImage} />
+                <p style={styles.footerText}>Managed by APEX ADS</p>
             </div>
         </div>
     );
 }
 
 const styles = {
-    wrapper: { minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#f3f4f6', fontFamily: '"Inter", system-ui, sans-serif', padding: '20px 15px' },
-    container: { width: '100%', maxWidth: '420px', display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'center' },
-    header: { textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: '#ffffff', padding: '40px 30px', borderRadius: '24px', boxShadow: '0 10px 30px rgba(0,0,0,0.08)', width: '100%' },
-    logoRing: { width: '70px', height: '70px', borderRadius: '18px', padding: '2px', background: '#1e40af', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '20px' },
-    circularImage: { width: '100%', height: '100%', borderRadius: '16px', objectFit: 'cover', backgroundColor: 'white' },
-    rulesTitle: { fontSize: '22px', fontWeight: '800', color: '#1e293b', margin: '0 0 5px 0', letterSpacing: '-0.5px' },
-    subText: { color: '#64748b', fontSize: '11px', fontWeight: '700', marginBottom: '25px', letterSpacing: '0.8px' },
-    neutralRules: { textAlign: 'left', backgroundColor: '#f8fafc', padding: '20px', borderRadius: '16px', width: '100%', marginBottom: '25px', border: '1px solid #e2e8f0' },
-    ruleHeading: { fontSize: '14px', fontWeight: '700', color: '#334155', marginBottom: '12px' },
-    list: { listStyle: 'none', padding: 0, margin: 0 },
-    listItem: { fontSize: '13px', color: '#475569', margin: '8px 0', fontWeight: '500', display: 'flex', alignItems: 'center' },
-    button: { width: '100%', padding: '18px', fontSize: '16px', fontWeight: '700', backgroundColor: '#1e40af', color: 'white', borderRadius: '12px', cursor: 'pointer', border: 'none', boxShadow: '0 4px 12px rgba(30, 64, 175, 0.25)', transition: 'all 0.2s' },
-    verifyNote: { fontSize: '11px', color: '#94a3b8', marginTop: '15px' },
-    footerBrand: { textAlign: 'center', marginTop: '10px' },
-    footerText: { fontSize: '10px', color: '#94a3b8', fontWeight: '700', letterSpacing: '0.5px' },
-    legalLinks: { fontSize: '10px', color: '#3b82f6', marginTop: '5px', fontWeight: '600' },
-    locationText: { fontSize: '9px', color: '#cbd5e1', marginTop: '8px', textTransform: 'uppercase' }
+    wrapper: { minHeight: '100vh', display: 'flex', justifyContent: 'center', backgroundColor: '#f1f5f9', fontFamily: 'system-ui, -apple-system, sans-serif', padding: '20px 15px' },
+    container: { width: '100%', maxWidth: '450px', display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'center' },
+    header: { textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: '#ffffff', padding: '30px 20px', borderRadius: '24px', boxShadow: '0 10px 25px rgba(0,0,0,0.05)', width: '100%' },
+    logoRing: { width: '100px', height: '100px', borderRadius: '50%', padding: '5px', background: 'linear-gradient(45deg, #0088cc, #00ffcc)', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '15px' },
+    circularImage: { width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover', backgroundColor: 'white' },
+    rulesTitle: { fontSize: '22px', fontWeight: '900', color: '#1e293b', margin: '0 0 8px 0' },
+    subText: { color: '#475569', fontSize: '14px', fontWeight: '700', margin: '5px 0' },
+    hindiText: { color: '#dc2626', fontSize: '17px', fontWeight: '800', marginTop: '10px' },
+    button: { width: '100%', padding: '20px', fontSize: '18px', fontWeight: 'bold', backgroundColor: '#0088cc', color: 'white', borderRadius: '14px', cursor: 'pointer', marginTop: '25px', border: 'none', boxShadow: '0 4px 15px rgba(0, 136, 204, 0.3)' },
+    verifyNote: { fontSize: '12px', color: '#94a3b8', marginTop: '12px' },
+    promoImage: { width: '100%', height: 'auto', borderRadius: '20px' },
+    footerText: { fontSize: '12px', color: '#94a3b8', fontWeight: 'bold', textTransform: 'uppercase' }
 };
 
 export default Page3;
